@@ -4,24 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>World Clock</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-
-    #clock {
-      margin-top: 30px;
-      font-size: 2em;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -37,39 +20,7 @@
   </div>
   <div id="clock">Select a country</div>
 
-  <script>
-    let intervalId;
-    let currentTime;
-
-    function showTime(timeZone) {
-      if (intervalId) clearInterval(intervalId);
-
-      // Obtener la hora actual en la zona horaria seleccionada
-      const now = new Date();
-      const options = {timeZone: timeZone};
-      const localeString = now.toLocaleString('en-US', options);
-      currentTime = new Date(localeString);
-
-      function updateClock() {
-        // Incrementar un segundo
-        currentTime.setSeconds(currentTime.getSeconds() + 1);
-
-        // Mostrar la hora formateada
-        const timeString = currentTime.toLocaleTimeString('en-US', {
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false
-        });
-        document.getElementById('clock').textContent = timeString + ' (' + timeZone + ')';
-        console.log(timeString + ' (' + timeZone + ')');
-      }
-
-      updateClock();
-      intervalId = setInterval(updateClock, 1000);
-    }
-
-  </script>
+  <script src="main.js"></script>
 </body>
 
 </html>
