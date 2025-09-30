@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="night"> <!-- por defecto empieza en modo noche -->
+<body class="night"> <!-- por defecto noche hasta que JS detecte -->
   <header>
     <img src="./assets/forentec-logo.png" alt="">
   </header>
@@ -15,8 +15,8 @@
   <section class="clock-section">
     <div class="clock-container">
       <div class="clock-container-timezone">
-        <p class="clock-container-timezone-title">Zona horaria GMT-6</p>
-        <p><img src="./assets/mexico.png" alt="">México city</p>
+        <p class="clock-container-timezone-title">Zona horaria</p>
+        <p id="countryDisplay"><img src="./assets/mexico.png" alt="">México city</p>
       </div>
       <div class="clock-container-clock">
         <img id="clock-icon" src="./assets/moon.png" alt="">
@@ -33,21 +33,19 @@
   <section class="timeZone-section">
     <div class="timeZone-container">
       <p>Selecciona o introduce tu país</p>
-      <input type="text" class="timeZone-input" 
-      placeholder="Escribe tu país" id="countryInput">
+      <input type="text" class="timeZone-input" placeholder="Escribe tu país" id="countryInput">
+      
 
       <select id="country" class="timeZone-select">
-        <option value="America/Mexico_City" onclick="showTime('America/Mexico_City')">México</option>
-        <option value="Europe/London" onclick="showTime('Europe/London')">London</option>
-        <option value="Europe/Oslo" onclick="showTime('Europe/Oslo')">Norway</option>
-        <option value="Europe/Moscow" onclick="showTime('Europe/Moscow')">Russia</option>
-        <option value="Asia/Shanghai" onclick="showTime('Asia/Shanghai')">China</option>
-        <option value="Asia/Seoul" onclick="showTime('Asia/Seoul')">South Korea</option>
-        <option value="Europe/Sofia" onclick="showTime('Europe/Sofia')">Bulgaria</option>
+        <option value="America/Mexico_City" data-country="mx">México</option>
+        <option value="Europe/London" data-country="gb">London</option>
+        <option value="Europe/Oslo" data-country="no">Norway</option>
+        <option value="Europe/Moscow" data-country="ru">Russia</option>
+        <option value="Asia/Shanghai" data-country="cn">China</option>
+        <option value="Asia/Seoul" data-country="kr">South Korea</option>
+        <option value="Europe/Sofia" data-country="bg">Bulgaria</option>
+        <option value="America/New_York" data-country="us">USA - Washington DC</option>
       </select>
-
-      <!-- Botón para alternar entre modo día/noche -->
-      <button id="toggleMode">Cambiar a Modo Día</button>
     </div>
   </section>
 

@@ -14,10 +14,11 @@ body {
   overflow: hidden;
 }
 
- body.night .clock-container-timezone-title{
-    color: rgb(179, 230, 245);
-   font-size: 20px;
- }
+/* Texto título zona horaria */
+body.night .clock-container-timezone-title{
+  color: rgb(179, 230, 245);
+  font-size: 20px;
+}
 
 body.day .clock-container-timezone-title{
   color: wheat;
@@ -27,11 +28,19 @@ body.day .clock-container-timezone-title{
 /*MODO NOCHE */
 body.night {
   background: linear-gradient(to bottom, #090942, #242475, #4161C2);
+  animation: fadeBackground 2s ease forwards;
 }
 
 /*MODO DÍA */
 body.day {
   background: linear-gradient(to bottom, #2C6DD6, #6BB9F4, #FFF4DC);
+  animation: fadeBackground 2s ease forwards;
+}
+
+/* Fade-in del fondo */
+@keyframes fadeBackground {
+  from { opacity: 7; }
+  to { opacity: 1; }
 }
 
 .clouds {
@@ -44,6 +53,8 @@ body.day {
   left: -56px;
   width: 377px;
   height: auto;
+  animation: moveCloudLeft 2s ease forwards;
+  opacity: 0;
 }
 
 .cloud-right {
@@ -52,6 +63,18 @@ body.day {
   right: -23px;
   width: 377px;
   height: auto;
+  animation: moveCloudRight 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes moveCloudLeft {
+  from { transform: translateX(-200px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes moveCloudRight {
+  from { transform: translateX(200px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 .clock-section {
@@ -69,12 +92,17 @@ body.day {
   flex-direction: column;
 }
 
+.clock-container-timezone img {
+  width: 64px;
+  height: auto;
+  margin-right: 10px;
+}
+
 .clock-container-clock img {
   align-self: center;
   display: flex;
   flex-direction: column;
   width: 384px;
-
 }
 
 .clock-container-clock-hour {
