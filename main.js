@@ -73,7 +73,7 @@ function iniciarReloj() {
       const minutos = fecha.getMinutes().toString().padStart(2, "0");
       const segundos = fecha.getSeconds().toString().padStart(2, "0");
 
-      document.querySelector(".clock-container-clock-hour").textContent = `${horas}:${minutos}:${segundos} HRS`;
+      document.querySelector(".clock-container-clock-hour").textContent = `${horas}:${minutos}:${segundos} hrs`;
     } catch (err) {
       console.error("Error actualizando reloj:", err);
     }

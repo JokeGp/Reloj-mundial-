@@ -7,7 +7,8 @@ header {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Hind Madurai", sans-serif;
+  font-size: 24px;
   margin-top: 50px;
   height: 100vh;
   transition: background 0.5s ease, color 0.5s ease;
@@ -24,16 +25,56 @@ body.day .clock-container-timezone-title{
   color: wheat;
   font-size: 20px;
 }
+#countryDisplay{
+  font-size: 37px;
+   font-family: "Hind Madurai", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 /*MODO NOCHE */
 body.night {
   background: linear-gradient(to bottom, #090942, #242475, #4161C2);
   animation: fadeBackground 2s ease forwards;
+  color: #FFE2AC;
+}
+body.night .clock-container{
+  color: #FFE2AC;
+}
+body.night .clock-container-country{
+  font-family: "Hind Madurai", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 37px;
+}
+body.night #countryInput{
+  background-color: #18185F;
+  border-radius: 20px;
+  opacity: 81%;
+  border-color: #FFFCF7;
+  color: #BBBDF0;
+  padding: 6px;
+}
+body.night #country{
+
+  background-color: #18185F;
+  border-radius: 20px;
+  opacity: 81%;
+  border-color: #FFFCF7;
+  color: #BBBDF0;
+  font-size: 18px;
+  padding: 6px;
+
 }
 
 /*MODO DÍA */
 body.day {
   background: linear-gradient(to bottom, #2C6DD6, #6BB9F4, #FFF4DC);
+  color:#3E7FE8;
+}
+
+body.day .clock-container{
+  color: #FFFEDB;
   animation: fadeBackground 2s ease forwards;
 }
 
@@ -107,6 +148,10 @@ body.day {
 
 .clock-container-clock-hour {
   text-align: center;
+    font-family: "Major Mono Display", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
 }
 
 .timeZone-section {
