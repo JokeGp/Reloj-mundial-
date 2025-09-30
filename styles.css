@@ -1,16 +1,100 @@
-   body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
+header {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+}
 
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+  height: 100vh;
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow: hidden;
+}
 
-    #clock {
-      margin-top: 30px;
-      font-size: 2em;
-    }
+ body.night .clock-container-timezone-title{
+    color: rgb(179, 230, 245);
+   font-size: 20px;
+ }
+
+body.day .clock-container-timezone-title{
+  color: wheat;
+  font-size: 20px;
+}
+
+/*MODO NOCHE */
+body.night {
+  background: linear-gradient(to bottom, #090942, #242475, #4161C2);
+}
+
+/*MODO DÍA */
+body.day {
+  background: linear-gradient(to bottom, #2C6DD6, #6BB9F4, #FFF4DC);
+}
+
+.clouds {
+  position: relative
+}
+
+.cloud-left {
+  position: absolute;
+  top: -132px;
+  left: -56px;
+  width: 377px;
+  height: auto;
+}
+
+.cloud-right {
+  position: absolute;
+  top: -346px;
+  right: -23px;
+  width: 377px;
+  height: auto;
+}
+
+.clock-section {
+  display: flex;
+  justify-content: center;
+}
+
+.clock-container {
+  width: 100vw;
+}
+
+.clock-container-clock {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.clock-container-clock img {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 384px;
+
+}
+
+.clock-container-clock-hour {
+  text-align: center;
+}
+
+.timeZone-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeZone-container {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

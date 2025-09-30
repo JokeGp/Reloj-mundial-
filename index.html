@@ -7,18 +7,49 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-  <h1>World Clock</h1>
-  <div>
-    <button onclick="showTime('America/Mexico_City')">Mexico</button>
-    <button onclick="showTime('Europe/London')">London</button>
-    <button onclick="showTime('Europe/Oslo')">Norway</button>
-    <button onclick="showTime('Europe/Moscow')">Russia</button>
-    <button onclick="showTime('Asia/Shanghai')">China</button>
-    <button onclick="showTime('Asia/Seoul')">South Korea</button>
-    <button onclick="showTime('Europe/Sofia')">Bulgaria</button>
+<body class="night"> <!-- por defecto empieza en modo noche -->
+  <header>
+    <img src="./assets/forentec-logo.png" alt="">
+  </header>
+
+  <section class="clock-section">
+    <div class="clock-container">
+      <div class="clock-container-timezone">
+        <p class="clock-container-timezone-title">Zona horaria GMT-6</p>
+        <p><img src="./assets/mexico.png" alt="">México city</p>
+      </div>
+      <div class="clock-container-clock">
+        <img id="clock-icon" src="./assets/moon.png" alt="">
+        <p class="clock-container-clock-hour">20:00:00 HRS</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="clouds">
+    <img class="cloud-left" src="./assets/cloud-left.png" alt="">
+    <img class="cloud-right" src="./assets/cloud-right.png" alt="">
   </div>
-  <div id="clock">Select a country</div>
+
+  <section class="timeZone-section">
+    <div class="timeZone-container">
+      <p>Selecciona o introduce tu país</p>
+      <input type="text" class="timeZone-input" 
+      placeholder="Escribe tu país" id="countryInput">
+
+      <select id="country" class="timeZone-select">
+        <option value="America/Mexico_City" onclick="showTime('America/Mexico_City')">México</option>
+        <option value="Europe/London" onclick="showTime('Europe/London')">London</option>
+        <option value="Europe/Oslo" onclick="showTime('Europe/Oslo')">Norway</option>
+        <option value="Europe/Moscow" onclick="showTime('Europe/Moscow')">Russia</option>
+        <option value="Asia/Shanghai" onclick="showTime('Asia/Shanghai')">China</option>
+        <option value="Asia/Seoul" onclick="showTime('Asia/Seoul')">South Korea</option>
+        <option value="Europe/Sofia" onclick="showTime('Europe/Sofia')">Bulgaria</option>
+      </select>
+
+      <!-- Botón para alternar entre modo día/noche -->
+      <button id="toggleMode">Cambiar a Modo Día</button>
+    </div>
+  </section>
 
   <script src="main.js"></script>
 </body>
