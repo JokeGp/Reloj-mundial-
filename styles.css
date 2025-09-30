@@ -9,10 +9,10 @@ header {
 body {
   font-family: "Hind Madurai", sans-serif;
   font-size: 24px;
-  margin-top: 50px;
   height: 100vh;
   transition: background 0.5s ease, color 0.5s ease;
   overflow: hidden;
+  margin: 1rem 2rem;
 }
 
 /* Texto título zona horaria */
@@ -30,6 +30,7 @@ body.day .clock-container-timezone-title{
    font-family: "Hind Madurai", sans-serif;
   font-weight: 700;
   font-style: normal;
+  margin-top: 0;
 }
 
 /*MODO NOCHE */
@@ -47,23 +48,73 @@ body.night .clock-container-country{
   font-style: normal;
   font-size: 37px;
 }
-body.night #countryInput{
-  background-color: #18185F;
-  border-radius: 20px;
-  opacity: 81%;
-  border-color: #FFFCF7;
-  color: #BBBDF0;
-  padding: 6px;
-}
-body.night #country{
 
-  background-color: #18185F;
+body.day #countryInput{
+  background-color: #3E7FE82E;
+  border-radius: 20px;
+  opacity: 81%;
+  border: 1px solid #ffffff;
+  color: #3E7FE8;
+  width: 300px;
+  height: 41px;
+  padding-left: 1rem;
+}
+
+body.night #countryInput{
+  border-radius: 20px;
+  opacity: 81%;
+  border: 1px solid #ffffff;
+  color: #BBBDF0;
+  width: 300px;
+  height: 41px;
+  background-color: #18185F2E;
+  padding-left: 1rem;
+}
+
+
+
+body.day #countryInput::placeholder{
+  color: #3E7FE8;
+  text-align:start;
+}
+
+body.night #countryInput::placeholder{
+  color: #FFFCF7CF;
+  text-align:start;
+}
+
+body.day #country{
+  background-color: #3E7FE82E;
   border-radius: 20px;
   opacity: 81%;
   border-color: #FFFCF7;
-  color: #BBBDF0;
   font-size: 18px;
   padding: 6px;
+  text-align: center;
+  color: #3E7FE8;
+  width: 317px;
+  height: 41px;
+}
+
+
+
+body.night #country{
+  background-color: #18185F2E;
+  border-radius: 20px;
+  opacity: 81%;
+  border-color: #FFFCF7;
+  color: #FFFCF7CF;
+  font-size: 18px;
+  padding: 6px;
+   width: 317px;
+  height: 41px;
+  text-align: center;
+  
+}
+
+body.night .timeZone-select option {
+  background-color: #090942; 
+  color: #ffffff; 
 
 }
 
@@ -152,6 +203,7 @@ body.day .clock-container{
     font-weight: 400;
     font-style: normal;
     font-size: 45px;
+    margin: 0px 0px;
 }
 
 .timeZone-section {
@@ -163,6 +215,7 @@ body.day .clock-container{
 .timeZone-container {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 button {
